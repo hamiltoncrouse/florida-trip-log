@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Carmem & Eric's Florida Trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #1a1a1a;
+      --accent: #2c3e50;
+      --muted: #7f8c8d;
+      --radius: 0px; /* Classic sharp look */
+      --shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .header {
+      padding: 100px 20px 60px;
+      text-align: center;
+      background: white;
+    }
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 400;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .header p {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+    .intro {
+      max-width: 600px;
+      margin: 0 auto 80px;
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .gallery {
+      columns: 3 300px;
+      column-gap: 40px;
+    }
+    .item {
+      break-inside: avoid;
+      margin-bottom: 40px;
+      background: white;
+      padding: 15px;
+      box-shadow: var(--shadow);
+    }
+    .item img {
+      width: 100%;
+      display: block;
+    }
+    .item-content {
+      padding: 20px 0 10px;
+    }
+    .item-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 0 0 8px 0;
+    }
+    .item-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+    }
+    .item-meta {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: #ccc;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    footer {
+      text-align: center;
+      padding: 100px 20px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+    @media (max-width: 800px) {
+      .header h1 { font-size: 2.8rem; }
+      .container { padding: 0 20px; }
+      .gallery { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Florida Trip</h1>
+    <p>Carmem & Eric — Feb 2026</p>
+  </header>
+
+  <div class="intro">
+    A visual diary of our time in St. Augustine. From the historic coquina walls of Castillo de San Marcos to the gilded halls of the Gilded Age, we explored the oldest corners of Florida.
+  </div>
+
+  <main class="container">
+    <div class="gallery" id="gallery">
+      <!-- Photos injected here -->
+    </div>
+  </main>
+
+  <footer>
+    ST. AUGUSTINE, FLORIDA &middot; FEBRUARY 2026
+  </footer>
+
+  <script>
+    const photos = [
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczN-IQGXoGD1s2onmbLWsa-BLAKPL1_kFWwQReHoAQq18PbU03Iu_ChljG_sCB1K2hCdSqKTdE6-GmQ6xca48ueXxXwevmBxknIKpxOfpDQqhPPGbF0I", title: "Castillo Walls", desc: "The imposing stone fortifications of the Castillo de San Marcos." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczPGTcmv9DPj9ei6kTafGDN33y7Ql6bMEYu9iWjSVVt5ncep5nGlxpz0ZHwpa9YodLkPOrWPFn_xs_VNpd2vAbylitbW4QitYU5kC3V-PMct0yY-XPyh", title: "Waterfront View", desc: "Looking out over the Matanzas River from the fort's gun deck." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczNIXfID4cimyyjd1t63w-lDkRi4rFg7S_jGsoRVKWXkP2WGKRm317SE7CK6Tj1ddJ6NOXxs8KOmdc91GRJYZO0GpDWfr2DEh1NjvLjXAo10aVwBxRwG", title: "Coquina Detail", desc: "A close-up of the ancient shell-stone that makes the fort unique." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczO61Xwbi77_0YcU-iDLQgyxcxk2as5brleZ84khyRnm0mYzcwqAMXWBHq047JVhBGnEzIepbggCu0eAEsg3Oj576ecodIyv-NjiDGwxvQmTIgks6XCS", title: "Drawbridge Entry", desc: "The main entrance to the fort, still standing strong after centuries." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczOQM7DzPUB2uG3zkonK4Orzko217GJvmjMe0ngR8NMLNUqUUJ9zhLVTqZRxfDHFHtKJWCdqKpUmYLFuepnUTnjwP7Yg_7JMbs0Zg-49KI7RZ1uC7Nzs", title: "The Sentry Box", desc: "An iconic garita watchtower at the edge of the battery." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczPpa7Aa_Or5g08TCW5-eTyCgNZt_f1MkMrtwf0rjVeKT5cpcnFt2AD4OOjw2xQAkWRPncONI9Qu21KAu1O_ORfO-ikX7DnBQ9_3PBR_20SnwnYe3X6Z", title: "Cannon Prep", desc: "Reenactors demonstrating the art of black powder artillery." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczPr1MnqUgrF3tk8H4dWc_usiwjSBcVp7D5XJRzmRo9TTsls1LxenXxoTStmoFJFwUg4mSvUq_jWTfsy5OxMpXDCaTzvPudKIk7Mj0yg-03pnXXTufuk", title: "Across the Bay", desc: "The Bridge of Lions visible in the distance from the high walls." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczPDrygt8BGWBbk9JQ5OqUUFmDQq8W_FnDKYZD3AVVwahyXtUmcU3EDuCs7Upr0B8rFsygj1xVQR-5LrBpHfLVwt6Fzy4tDnnPN6h4lUSuMMKT-xy1Vh", title: "Moat Walk", desc: "Exploring the grassy moat that surrounds the masonry star fort." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczMZvWaUJEsAs91P79wnqyZMwwu4FZFPhw6GLhg7JgKYwnS7_Rb6Z8NhppKJAmoB8kC9x6BoL3na-LcoA5HHBnBb4Gt73UsujNc4GSblkyHLsGdUyHu_", title: "Spanish Sentries", desc: "Living history comes to life on the Castillo's terreplein." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczN1NMrFKYZ9RgUToiFYJtc0iFmOihswueCW85VZjFHUORXwcqkV4t2ZQJKGYSV7QpJ638oawXSQ8L1pOMnuUJ4qD95-nkW8aMBQbg5pRAxqk8zCw56R", title: "Iron & Stone", desc: "Heavy iron cannons mounted and ready for action." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczNE0jkh8g30E-1O1jFfYKcangEBCwNrKmOWXhjZcG1k6HIndlLR1n2FtiMJjZy3E6v_hurX-Ric3jfcVXYIl9WUJzJIEm0jWWv5MMLQ7rU08AQpfMrV", title: "Gilded Rotunda", desc: "Looking up at the incredible ceilings of Flagler College." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczPa9-qLeRM0B5_5qVdtAruqG8LylDq560zVT81rWBJDeAV4e1l6IXxiIiMIYROrnMXgUtZQHqFCSApz56f4f1bp8FYDRhWKLbyFxc7FYJ8U1bC73P-g", title: "Ponce de Leon Hall", desc: "The grand dining hall and its Victorian elegance." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczMhMtIVke6gX4ptNS8doBFARjpwz2Zt3FIMfnvPNEszz-ShxTvUzTyRCihBZu9_HFLQReS1qCVbTuQ-vGiulc7lrG7OBBFi1rnNySzd5yXyJecOEfD0", title: "Golden Details", desc: "Intricate architectural details from the Gilded Age." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczMYlFm-CC1crEz-0LK174-PoF-1tkwzlqpGvPnqQWtUx7bEoSGr9_tMH3cLSlYESHGVIvVJq0CAmLFPF8UAPxVNF5U6nmWCR_IOObxnR1XnnFQKxnFx", title: "Historic Courtyard", desc: "The lush gardens and fountains of the former hotel." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczNzTdGQYI1V6s9oWXTt6QhJeNcaufMeTIKaU5_804Gs7mGad_xLoQ130BuvmowM8HVxLsly6HIKLAF-qEY4NS-W-ztfvMXWWjfrSeNQLpiTjxzWY8JO", title: "Statues & Silence", desc: "Peaceful moments in the historic district." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczPZFvAx_Utzpx82TD1WX6Eb1crnlLJvBkaT4_Y2pwv0guwcg7VgcktwrnjhMALTm_fXZmp0djpzRPVGl-QgxLvW14HMH9OnGOVDQWuRrSQ0Vv2Qso_e", title: "The High Battery", desc: "Strategic views from the top of the fort." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczMMK1pmFco-3-Yb-mkAl6tnlAHFsLu-B7TdpqKSHfhprbLCTGzhwwYmHq0tLbtWNJo1WXMzrG3VK7-vdl9vLGjeveF7hirH0AQrMIrivcYSrWHl4vl6", title: "Old World Florida", desc: "Strolling through the narrow streets of the city." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczNyKMsorkXZJdBOQMNU8KnxsuPybulls4QBekyoURp0w1a1ypCJgwSPZnHi0JjaLgBUHj6znGMQSZmHQqxX4MvJwdIedVmmw_YdEvbSXfuDoWpoUcXQ", title: "Matanzas Sunset", desc: "The light hitting the water as evening approaches." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczML-GZpPSLz7DNQvAK1sIddYnJS5MhRkvSz_cCIP__fsDDhxif6GpyKP29tsSgyg9K5h6X1y96messa5yfuY8AyF3ig-4tgZu9AsFH9YGQxKqATX33u", title: "St. George Street", desc: "The bustling heart of the historic district." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczNjjHMh_w2R-gPyjzgvTtQt1rNBZ3qn47PQgjTUSZuQr8qqxkaaKKNwNtgpgw73cbtUQdiz2Oe-cnlY_jK80aZtAyvvdN2UJ3OWALi2rn2vyHrZuSE4", title: "Lighthouse Echoes", desc: "Views toward the St. Augustine lighthouse." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczNcgUuVlpNWL-5LM67RdYZQmioo2IxItaZSQAXKwWTGG4n0T9AHSqhh7qaulnpUD17xEekRLkDq55FRRSjJR-VjORdNCLJcwSKLRgPj4883O_gIsE3j", title: "The Plaza", desc: "Central gathering spots in the old town." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczOxeU_GCjFC5pNXNQ4qHyHbsD1HAJZ1aQGvoT3Dj-Zr4ksOfRA8G8yxttokiRKXPuECklYEitm_unRxlbygX-gTT9wafMZPZpfxYfUv8BsRSckPMBgY", title: "Towers of Flagler", desc: "The ornate spires of the college against a blue sky." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczOCrYHG6Q22mkeEE7tis3NhqgYMUMv3u3r7g3p5Sh4k_wUAhSjUpl_CC2fF4kC3uTE-H_Eqvw-JHwk0qG8LwNvmaSmXWL4D0QI2-S0Sg-JmmCX-whVf", title: "Spanish Moss", desc: "Classic Southern scenery in the gardens." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczOGTmWw_60WKHpxO1Z4w5T5x1KiDjFJhdTXhPgSgO2GKSE1g1oGM9sH7G4pqSGf_XZ7ocVdSavsipYBNpaJNGs6fgo9rdy5PbdD9yAXXnsggaYOCZiZ", title: "Archways", desc: "Beautiful masonry and architecture." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczP7TeFcTIQ7JXMZAgTCU6m1c8pZIARdjkPuXom90xBFesERrZf4MPl2DVF5uswDU4Pk7oCJf9hvTyyxSwWvBzT6_iXKCznBsLS2K7EEvzY_O9GKWjoB", title: "Waterfront Path", desc: "A scenic walk along the sea wall." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczOs2mmkhZHeHMLE6Byoo0JRjNGiGl6KLTJ6rWy-b9dJc0dfA-Sagmkw3_E_wTyiAQ6ejNnSEh282jY0ImDL7JvWQoIjkxgCs-bbcVQ2EDFO-JRoFNGk", title: "Stone Steps", desc: "Climbing through history at every turn." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczNoXc7xo804H5KO5VWCd9gPdrt5j9dFRSVpxKfEpFxi8_q3XOYs2P9uCZfUZq2zllG4Rt9JgD-BovMnm69eJ5poNvfrbOFYpbJr6eOBsPkvPMNHSpo2", title: "Shadows & Stone", desc: "The play of light on the fort's ancient walls." },
+      { src: "https://lh3.googleusercontent.com/pw/AP1GczOSo5CzzuAbliZe_HFQ6wNuMpXm6B32N2KhxC8aEOg8pTzD-xN8wC5AUam87jE7cqwpkPZjgggnnZYbohw-gfTYaQ48Ge4_yNKvddwRDrNz0DHoMhuQ", title: "Trip Memories", desc: "A final look at the Castillo before heading home." }
+    ];
+
+    const gallery = document.getElementById('gallery');
+    photos.forEach(photo => {
+      const el = document.createElement('div');
+      el.className = 'item';
+      el.innerHTML = `
+        <img src="${photo.src}=w800" alt="${photo.title}" loading="lazy">
+        <div class="item-content">
+          <h2 class="item-title">${photo.title}</h2>
+          <p class="item-desc">${photo.desc}</p>
+          <div class="item-meta">Feb 2026 &middot; St. Augustine</div>
+        </div>
+      `;
+      gallery.appendChild(el);
+    });
+  </script>
+</body>
+</html>
