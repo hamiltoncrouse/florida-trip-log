@@ -1,7 +1,14 @@
 services:
   - type: web
     name: florida-trip-log
-    runtime: static
-    branch: main
-    buildCommand: echo "No build step"
-    staticPublishPath: .
+    runtime: node
+    plan: free
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: my-data-vibe # Assuming this is the DB name from the README context or similar
+          property: connectionString
+      - key: NODE_VERSION
+        value: 20
