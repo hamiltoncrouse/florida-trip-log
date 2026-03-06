@@ -103,6 +103,17 @@
       .container { padding: 0 20px; }
       .gallery { columns: 1; }
     }
+    .comments-section {
+      margin-top: 80px;
+      padding-top: 60px;
+      border-top: 1px solid #eee;
+    }
+    .comments-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
   </style>
 </head>
 <body>
@@ -119,6 +130,17 @@
     <div class="gallery" id="gallery">
       <!-- Photos injected here -->
     </div>
+
+    <section class="comments-section">
+      <h2>Comments</h2>
+      <script src="https://utteranc.es/client.js"
+              repo="hamiltoncrouse/florida-trip-log"
+              issue-term="pathname"
+              theme="github-light"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </section>
   </main>
 
   <footer>
