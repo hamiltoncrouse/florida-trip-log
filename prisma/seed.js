@@ -2,6 +2,13 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 async function main() {
+  // Check if photos already exist to avoid duplicates on redeploy
+  const count = await prisma.photo.count();
+  if (count > 0) {
+    console.log("Database already has photos, skipping seed.");
+    return;
+  }
+
   const photos = [
     { url: "https://lh3.googleusercontent.com/pw/AP1GczN-IQGXoGD1s2onmbLWsa-BLAKPL1_kFWwQReHoAQq18PbU03Iu_ChljG_sCB1K2hCdSqKTdE6-GmQ6xca48ueXxXwevmBxknIKpxOfpDQqhPPGbF0I", title: "Castillo Corner", desc: "A sunlit corner of the Castillo de San Marcos showing the weathered stone bastion and the dry moat.", loc: "St. Augustine" },
     { url: "https://lh3.googleusercontent.com/pw/AP1GczPGTcmv9DPj9ei6kTafGDN33y7Ql6bMEYu9iWjSVVt5ncep5nGlxpz0ZHwpa9YodLkPOrWPFn_xs_VNpd2vAbylitbW4QitYU5kC3V-PMct0yY-XPyh", title: "Fort Entrance Bridge", desc: "The wooden bridge and gate leading into the fort’s interior courtyard, framed by high coquina walls.", loc: "St. Augustine" },
@@ -36,6 +43,7 @@ async function main() {
   for (const p of photos) {
     await prisma.photo.create({ data: p });
   }
+  console.log("Seed complete.");
 }
 
 main()
