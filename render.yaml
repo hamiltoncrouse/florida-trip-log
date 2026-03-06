@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: florida-trip-log
+    runtime: static
+    branch: main
+    buildCommand: echo "No build step"
+    staticPublishPath: .
